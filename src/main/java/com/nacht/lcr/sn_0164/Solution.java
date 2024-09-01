@@ -1,7 +1,6 @@
-package com.nacht.lcr_sn_0164;
+package com.nacht.lcr.sn_0164;
 
 import java.util.Arrays;
-import java.util.Comparator;
 
 /**
  * @author Nacht
