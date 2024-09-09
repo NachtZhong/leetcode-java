@@ -21,22 +21,22 @@ public class Solution {
             return x;
         }
         /*二分法*/
-        long l = 0, r = x, mid = (l + r) / 2, current;
-        while((current = mid * mid) != x){
-            /*mid碰到边界了就返回*/
+        long l = 0, r = x, mid;
+        while(l <= r){
+            mid = (l + r) / 2;
             if (mid == l || mid == r){
                 return (int) mid;
             }
-            if (current > x){
-                /*结果在左*/
-                r = mid;
-            }else{
-                /*结果在右*/
+            long current = mid * mid;
+            if (current == x){
+                return (int) mid;
+            } else if (current < x) {
                 l = mid;
+            }else{
+                r = mid;
             }
-            mid = (l + r) / 2;
         }
-        return (int) mid;
+        return (int) l;
     }
 
     public static void main(String[] args) {
