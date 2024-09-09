@@ -14,30 +14,12 @@ public class Solution {
         if (list2 == null){
             return list1;
         }
-        ListNode current;
-        if (list1.val < list2.val){
-            current = list1;
-            list1 = list1.next;
-            current.next = null;
+        if (list1.val <= list2.val){
+            list1.next = mergeTwoLists(list1.next, list2);
+            return list1;
         }else{
-            current = list2;
-            list2 = list2.next;
-            current.next = null;
+            list2.next = mergeTwoLists(list1, list2.next);
+            return list2;
         }
-        ListNode result = current;
-        while (list1 != null || list2 != null){
-            if (list1 == null || (list2 != null && list1.val >= list2.val)){
-                current.next = list2;
-                list2 = list2.next;
-                current = current.next;
-                continue;
-            }
-            current.next = list1;
-            list1 = list1.next;
-            current = current.next;
-
-        }
-
-        return result;
     }
 }

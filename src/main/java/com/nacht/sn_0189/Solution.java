@@ -19,31 +19,17 @@ public class Solution {
             return;
         }
         int l = 0, r = nums.length - 1;
-        /*首先翻转整个数组*/
-        while (l < r){
-            swap(nums, l++, r--);
-        }
-        /*以k为边界, 分别翻转两个子数组*/
-        l = 0; r = k - 1;
-        while (l < r){
-            swap(nums, l++, r--);
-        }
-        l = k; r = nums.length - 1;
-        while (l < r){
-            swap(nums, l++, r--);
-        }
+        reverse(nums, l, r);
+        reverse(nums, l, k - 1);
+        reverse(nums, k, r);
     }
 
-    /**
-     * 交换元素
-     * @param nums
-     * @param i
-     * @param j
-     */
-    public void swap(int[] nums, int i, int j){
-        int tmp = nums[i];
-        nums[i] = nums[j];
-        nums[j] = tmp;
+    public void reverse(int[] nums, int l, int r){
+        while (l < r){
+            int tmp = nums[l];
+            nums[l++] = nums[r];
+            nums[r--] = tmp;
+        }
     }
 
     public static void main(String[] args) {
