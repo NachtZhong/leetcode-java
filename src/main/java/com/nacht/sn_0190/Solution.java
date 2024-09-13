@@ -6,18 +6,12 @@ package com.nacht.sn_0190;
  */
 public class Solution {
     public int reverseBits(int n) {
-        int current = 1;
         int result = 0;
-        char[] arr = getUnsignedBinaryString(n).toCharArray();
-        for (int i = 0; i < arr.length; i++) {
-            result += current * (arr[i] - '0');
-            current *= 2;
+        for (int i = 0; i < 32; i++) {
+            result |= (n & 1) << (31 - i);
+            n >>>= 1;
         }
         return result;
-    }
-    public static String getUnsignedBinaryString(int number) {
-        // 将负数提升为long类型并通过位操作获取无符号二进制表示
-        return String.format("%32s", Long.toBinaryString(number & 0xFFFFFFFFL)).replace(' ', '0');
     }
 
     public static void main(String[] args) {
