@@ -19,6 +19,16 @@ public class TreeNode {
         this.left = left;
         this.right = right;
     }
+
+    @Override
+    public String toString() {
+        return "TreeNode{" +
+                "val=" + val +
+                ", left=" + left +
+                ", right=" + right +
+                '}';
+    }
+
     // 基于层序遍历的 Integer 数组的构造方法
     public static TreeNode buildTree(Integer[] array) {
         if (array == null || array.length == 0 || array[0] == null) {
