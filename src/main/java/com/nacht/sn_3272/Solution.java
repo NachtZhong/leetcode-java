@@ -116,6 +116,6 @@ public class Solution {
 
     public static void main(String[] args) {
         System.out.println(new Solution().countGoodIntegers(5, 6));
-//        System.out.println(new Solution().countUniqueNumbers(new int[]{2, 0,0,0, 2, 0, 0, 1}, 5));
+//        System.out.println(new Solution.sql().countUniqueNumbers(new int[]{2, 0,0,0, 2, 0, 0, 1}, 5));
     }
 }
